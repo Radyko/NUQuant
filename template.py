@@ -20,10 +20,13 @@ def place_market_order(side: str, ticker: str, quantity: float, price: float) ->
 
 class Strategy:
     def __init__(self) -> None:
-        self.bitcoin_sell_prices = []
-        self.orderbook_update_count = 0
 
-
+        self.orderbook_update_LTC_sell_count = 0
+        self.orderbook_update_LTC_buy_count = 0
+        self.orderbook_update_ETH_sell_count = 0
+        self.orderbook_update_ETH_buy_count = 0
+        self.orderbook_update_BTC_sell_count = 0
+        self.orderbook_update_BTC_buy_count = 0
 
     def on_trade_update(self, ticker: str, side: str, price: float, quantity: float) -> None:
         """Called whenever two orders match. Could be one of your orders, or two other people's orders.
@@ -58,22 +61,69 @@ class Strategy:
         quantity
             Volume placed into orderbook
         """
-        print(f"Python Orderbook update: {ticker} {side} {price} {quantity}")
 
         print(f"Python Orderbook update: {ticker} {side} {price} {quantity}")
+        if ticker == "LTC" and side == "SELL":
+            price_ltc = price
+            self.orderbook_update_LTC_sell_count += 1
+            if self.orderbook_update_LTC_sell_count >= 30:
+                # Stop collecting after 30 updates
+                print("Collected 30 Litecoin sell prices. Stopping collection.")
+                place_market_order("SELL", "ETH", 1, price_ltc)
+            print(self.orderbook_update_LTC_sell_count)
+
+
+
+        if ticker == "LTC" and side == "BUY":
+            price_ltc = price
+            self.orderbook_update_LTC_buy_count += 1
+            if self.orderbook_update_LTC_buy_count >= 30:
+                print("Collected 30 Litecoin sell prices. Stopping collection.")
+                place_market_order("BUY", "ETH", 1, price_ltc)
+            print(self.orderbook_update_LTC_buy_count)
+
+
+        if ticker == "ETH" and side == "SELL":
+            price_eth = price
+            self.orderbook_update_ETH_sell_count += 1
+            if self.orderbook_update_ETH_sell_count >= 30:
+                # Stop collecting after 30 updates
+                print("Collected 30 Etherium sell prices. Stopping collection.")
+                place_market_order("SELL", "ETH", 1, price_eth)
+            print(self.orderbook_update_ETH_sell_count)
+
+
+        if ticker == "ETH" and side == "BUY":
+            price_eth = price
+            self.orderbook_update_ETH_buy_count += 1
+            if self.orderbook_update_ETH_buy_count >= 30:
+                print("Collected 30 Etherium sell prices. Stopping collection.")
+                place_market_order("BUY", "ETH", 1, price_eth)
+            print(self.orderbook_update_ETH_buy_count)
+
+
         if ticker == "BTC" and side == "SELL":
-            self.bitcoin_sell_prices.append(price)
-            self.orderbook_update_count += 1
-            if self.orderbook_update_count >= 30:
+            price_btc = price
+            self.orderbook_update_BTC_sell_count += 1
+            if self.orderbook_update_BTC_sell_count >= 30:
                 # Stop collecting after 30 updates
                 print("Collected 30 Bitcoin sell prices. Stopping collection.")
-                self.calculate_average_bitcoin_sell_price()
+                place_market_order("SELL", "BTC", 1, price_btc)
+            print(self.orderbook_update_BTC_sell_count)
 
 
-    def calculate_average_bitcoin_sell_price(self):
-        if self.bitcoin_sell_prices:
-            average_price = sum(self.bitcoin_sell_prices) / len(self.bitcoin_sell_prices)
-            print(f"Average Bitcoin sell price over 30 updates: {average_price}")
+        if ticker == "BTC" and side == "BUY":
+            price_btc = price
+            self.orderbook_update_BTC_buy_count += 1
+            if self.orderbook_update_BTC_buy_count >= 30:
+                print("Collected 30 Bitcoin sell prices. Stopping collection.")
+                place_market_order("BUY", "BTC", 1, price_btc)
+            print(self.orderbook_update_BTC_buy_count)
+
+
+
+
+
 
     def on_account_update(
             self,
@@ -82,6 +132,7 @@ class Strategy:
             price: float,
             quantity: float,
             capital_remaining: float,
+
     ) -> None:
         """Called whenever one of your orders is filled.
 
@@ -101,10 +152,3 @@ class Strategy:
         print(
             f"Python Account update: {ticker} {side} {price} {quantity} {capital_remaining}"
         )
-
-
-if __name__ == "__main__":
-    # Create an instance of the Strategy class
-    strategy_instance = Strategy()
-
-
