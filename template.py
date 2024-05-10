@@ -17,6 +17,7 @@ def place_market_order(side: str, ticker: str, quantity: float, price: float) ->
     True if order succeeded, False if order failed due to rate limiting
     """
 
+
 class Strategy:
     """Template for a strategy."""
 
@@ -40,7 +41,7 @@ class Strategy:
         print(f"Python Trade update: {ticker} {side} {price} {quantity}")
 
     def on_orderbook_update(
-        self, ticker: str, side: str, price: float, quantity: float
+            self, ticker: str, side: str, price: float, quantity: float
     ) -> None:
         """Called whenever the orderbook changes. This could be because of a trade, or because of a new order, or both.
         Returns the total quantity available at the given level
@@ -59,12 +60,12 @@ class Strategy:
         print(f"Python Orderbook update: {ticker} {side} {price} {quantity}")
 
     def on_account_update(
-        self,
-        ticker: str,
-        side: str,
-        price: float,
-        quantity: float,
-        capital_remaining: float,
+            self,
+            ticker: str,
+            side: str,
+            price: float,
+            quantity: float,
+            capital_remaining: float,
     ) -> None:
         """Called whenever one of your orders is filled.
 
@@ -84,3 +85,16 @@ class Strategy:
         print(
             f"Python Account update: {ticker} {side} {price} {quantity} {capital_remaining}"
         )
+
+
+# Example of how to use the Strategy class and call its methods
+if __name__ == "__main__":
+    # Create an instance of the Strategy class
+    strategy_instance = Strategy()
+
+    # Call the on_trade_update method
+    ticker = "BTC"
+    side = "BUY"
+    price = 50000.00
+    quantity = 1.5
+    strategy_instance.on_trade_update(ticker, side, price, quantity)
