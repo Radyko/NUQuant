@@ -19,10 +19,10 @@ def place_market_order(side: str, ticker: str, quantity: float, price: float) ->
 
 
 class Strategy:
-    """Template for a strategy."""
-
     def __init__(self) -> None:
-        """Your initialization code goes here."""
+        self.bitcoin_sell_prices = []
+        self.orderbook_update_count = 0
+
 
 
     def on_trade_update(self, ticker: str, side: str, price: float, quantity: float) -> None:
@@ -60,6 +60,21 @@ class Strategy:
         """
         print(f"Python Orderbook update: {ticker} {side} {price} {quantity}")
 
+        print(f"Python Orderbook update: {ticker} {side} {price} {quantity}")
+        if ticker == "BTC" and side == "SELL":
+            self.bitcoin_sell_prices.append(price)
+            self.orderbook_update_count += 1
+            if self.orderbook_update_count >= 30:
+                # Stop collecting after 30 updates
+                print("Collected 30 Bitcoin sell prices. Stopping collection.")
+                self.calculate_average_bitcoin_sell_price()
+
+
+    def calculate_average_bitcoin_sell_price(self):
+        if self.bitcoin_sell_prices:
+            average_price = sum(self.bitcoin_sell_prices) / len(self.bitcoin_sell_prices)
+            print(f"Average Bitcoin sell price over 30 updates: {average_price}")
+
     def on_account_update(
             self,
             ticker: str,
@@ -92,15 +107,4 @@ if __name__ == "__main__":
     # Create an instance of the Strategy class
     strategy_instance = Strategy()
 
-    # Call the on_trade_update method
-    ticker = "BTC"
-    side = "BUY"
-    price = 400.00
-    quantity = 1.5
-    capital_remaining = 99400
-    place_market_order(ticker, side, price, quantity)
-    strategy_instance.on_orderbook_update(ticker, side, price, quantity)
-    strategy_instance.on_trade_update(ticker, side, price, quantity)
-    strategy_instance.on_orderbook_update(ticker, side, price, quantity)
-    strategy_instance.on_account_update(ticker, side, price, quantity, capital_remaining)
 
