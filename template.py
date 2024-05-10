@@ -24,6 +24,7 @@ class Strategy:
     def __init__(self) -> None:
         """Your initialization code goes here."""
 
+
     def on_trade_update(self, ticker: str, side: str, price: float, quantity: float) -> None:
         """Called whenever two orders match. Could be one of your orders, or two other people's orders.
 
@@ -87,7 +88,6 @@ class Strategy:
         )
 
 
-# Example of how to use the Strategy class and call its methods
 if __name__ == "__main__":
     # Create an instance of the Strategy class
     strategy_instance = Strategy()
@@ -95,6 +95,10 @@ if __name__ == "__main__":
     # Call the on_trade_update method
     ticker = "BTC"
     side = "BUY"
-    price = 50000.00
+    price = 70000.00
     quantity = 1.5
+    place_market_order(ticker, side, price, quantity)
+    strategy_instance.on_orderbook_update(ticker, side, price, quantity)
     strategy_instance.on_trade_update(ticker, side, price, quantity)
+    strategy_instance.on_orderbook_update(ticker, side, price, quantity)
+
