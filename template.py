@@ -95,10 +95,12 @@ if __name__ == "__main__":
     # Call the on_trade_update method
     ticker = "BTC"
     side = "BUY"
-    price = 70000.00
+    price = 400.00
     quantity = 1.5
+    capital_remaining = 99400
     place_market_order(ticker, side, price, quantity)
     strategy_instance.on_orderbook_update(ticker, side, price, quantity)
     strategy_instance.on_trade_update(ticker, side, price, quantity)
     strategy_instance.on_orderbook_update(ticker, side, price, quantity)
+    strategy_instance.on_account_update(ticker, side, price, quantity, capital_remaining)
 
