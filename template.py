@@ -20,7 +20,7 @@ def place_market_order(side: str, ticker: str, quantity: float, price: float) ->
 
 class Strategy:
     def __init__(self) -> None:
-        self.delta_volume = None
+        self.eth_delta_volume = None
         self.current_balance = 100000
         self.buy_price = None
         self.sell_price = None
@@ -29,18 +29,18 @@ class Strategy:
         self.sell_greater_ctr = 0
         self.sell_lesser_ctr = 0
 
-    def execute_trade(self, delta_volume, side, ticker):
-        if ticker == "ETH" and self.delta_volume is not None:
-            if side == "BUY" and delta_volume > 0.1:
+    def execute_trade(self, eth_delta_volume, side, ticker):
+        if ticker == "ETH" and self.eth_delta_volume is not None:
+            if side == "BUY" and eth_delta_volume > 0.1:
                 place_market_order("BUY", "ETH", 1, self.buy_price)
                 self.buy_greater_ctr += 1
-            if side == "BUY" and delta_volume < 0:
+            if side == "BUY" and eth_delta_volume < 0:
                 place_market_order("SELL", "ETH", 1, self.sell_price)
                 self.buy_lesser_ctr += 1
-            if side == "SELL" and delta_volume < -0.1:
+            if side == "SELL" and eth_delta_volume < -0.1:
                 place_market_order("SELL", "ETH", 1, self.sell_price)
                 self.sell_lesser_ctr += 1
-            if side == "SELL" and delta_volume > 0:
+            if side == "SELL" and eth_delta_volume > 0:
                 place_market_order("BUY", "ETH", 1, self.buy_price)
                 self.sell_greater_ctr += 1
 
@@ -48,7 +48,7 @@ class Strategy:
         total_eth_volume = 0
         total_eth_sell_volume = 0
         total_eth_buy_volume = 0
-        self.delta_volume = 0
+        self.eth_delta_volume = 0
 
         print(f"Python Trade update: {ticker} {side} {price} {quantity}")
 
@@ -59,9 +59,9 @@ class Strategy:
         elif side == "BUY":
             total_eth_buy_volume += 1
 
-        self.delta_volume = ((total_eth_buy_volume - total_eth_sell_volume) / total_eth_volume)
+        self.eth_delta_volume = ((total_eth_buy_volume - total_eth_sell_volume) / total_eth_volume)
 
-        self.execute_trade(self.delta_volume, side, ticker)
+        self.execute_trade(self.eth_delta_volume, side, ticker)
 
     def on_orderbook_update(self, ticker: str, side: str, price: float, quantity: float) -> None:
         if ticker == "ETH":
