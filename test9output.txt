@@ -65,7 +65,7 @@ print_output: Python Trade update: ETH BUY 154.75 0.11037054991522266
 print_output: Python Trade update: ETH BUY 154.75 0.03195293308202335
 print_output: Python Trade update: ETH BUY 154.9 0.04971787214207679
 print_output: Python Trade update: ETH BUY 154.9 0.26170949502213164
-print_output: Python Account update: ETH SELL 154.9 0.26170949502213164 99867.7985700895
+print_output: Python Account update: ETH SELL 154.9 0.26170949502213164
 print_output: Python Trade update: ETH SELL 155.1 0.40376360020159174
 print_output: Python Trade update: ETH BUY 154.85 0.1097829257243248
 print_output: Python Trade update: ETH BUY 154.91 0.36089186689977004
@@ -124,15 +124,15 @@ print_output: Python Trade update: ETH SELL 151.45 0.5242420124089512
 print_output: Python Trade update: ETH SELL 151.45 0.3693239102020728
 print_output: Python Trade update: ETH SELL 151.45 0.4135043978873471
 print_output: Python Trade update: ETH SELL 151.34 0.5215339218448564
-print_output: Python Account update: ETH BUY 151.34 0.5215339218448564 99587.38679564955
+print_output: Python Account update: ETH BUY 151.34 0.5215339218448564
 print_output: Python Trade update: ETH SELL 151.34 0.47846607815514364
-print_output: Python Account update: ETH BUY 151.34 0.47846607815514364 99587.38679564955
+print_output: Python Account update: ETH BUY 151.34 0.47846607815514364
 print_output: Python Trade update: ETH SELL 151.34 0.046753153945632286
-print_output: Python Account update: ETH BUY 151.34 0.046753153945632286 99587.38679564955
+print_output: Python Account update: ETH BUY 151.34 0.046753153945632286
 print_output: Python Trade update: ETH SELL 151.34 0.369740735413991
-print_output: Python Account update: ETH BUY 151.34 0.369740735413991 99587.38679564955
+print_output: Python Account update: ETH BUY 151.34 0.369740735413991
 print_output: Python Trade update: ETH SELL 151.34 0.4363657276612671
-print_output: Python Account update: ETH BUY 151.34 0.4363657276612671 99587.38679564955
+print_output: Python Account update: ETH BUY 151.34 0.4363657276612671
 print_output: Python Trade update: ETH SELL 150.88 0.5224966813419014
 print_output: Python Trade update: ETH SELL 150.88 0.3709705767934286
 print_output: Python Trade update: ETH SELL 150.88 0.5513472748537032
@@ -155,15 +155,15 @@ print_output: Python Trade update: ETH SELL 150.32 0.41673933870029534
 print_output: Python Trade update: ETH BUY 150.29 0.07897906875906568
 print_output: Python Trade update: ETH BUY 150.29 0.2753204839340856
 print_output: Python Trade update: ETH SELL 150.14 0.3539170680498873
-print_output: Python Account update: ETH SELL 150.14 0.3539170680498873 99640.52390424655
+print_output: Python Account update: ETH SELL 150.14 0.3539170680498873
 print_output: Python Trade update: ETH BUY 149.88 0.5566649733819925
-print_output: Python Account update: ETH SELL 149.88 0.5566649733819925 99779.74000621929
+print_output: Python Account update: ETH SELL 149.88 0.5566649733819925
 print_output: Python Trade update: ETH BUY 149.88 0.08941795856812018
-print_output: Python Account update: ETH SELL 149.88 0.08941795856812018 99779.74000621929
+print_output: Python Account update: ETH SELL 149.88 0.08941795856812018
 print_output: Python Trade update: ETH BUY 149.88 0.2827674948762575
-print_output: Python Account update: ETH SELL 149.88 0.2827674948762575 99779.74000621929
+print_output: Python Account update: ETH SELL 149.88 0.2827674948762575
 print_output: Python Trade update: ETH BUY 149.88 0.556103896949044
-print_output: Python Account update: ETH SELL 149.88 0.556103896949044 99863.08885829401
+print_output: Python Account update: ETH SELL 149.88 0.556103896949044
 print_output: Python Trade update: ETH BUY 150.29 0.2510380504481945
 print_output: Python Trade update: ETH BUY 150.39 0.4176462993825294
 print_output: Python Trade update: ETH BUY 150.66 0.3526321919199731
@@ -191,11 +191,11 @@ print_output: Python Trade update: ETH SELL 150.26 0.365324111191006
 print_output: Python Trade update: ETH BUY 150.01 0.1891576747121843
 print_output: Python Trade update: ETH SELL 150.0 0.3649180290492585
 print_output: Python Trade update: ETH BUY 150.18 0.4390405635616661
-print_output: Python Account update: ETH BUY 150.18 0.4390405635616661 99797.15374645832
+print_output: Python Account update: ETH BUY 150.18 0.4390405635616661
 print_output: Python Trade update: ETH SELL 150.26 0.5308164477545843
-print_output: Python Account update: ETH BUY 150.26 0.5308164477545843 99717.39326701872
+print_output: Python Account update: ETH BUY 150.26 0.5308164477545843
 print_output: Python Trade update: ETH SELL 150.26 0.03014298868374965
-print_output: Python Account update: ETH BUY 150.26 0.03014298868374965 99712.8639815391
+print_output: Python Account update: ETH BUY 150.26 0.03014298868374965
 print_output: Python Trade update: ETH SELL 150.0 0.18019345845155432
 print_output: Python Trade update: ETH SELL 149.97 0.32193938325412674
 print_output: Python Trade update: ETH SELL 149.97 0.09575250288308046
@@ -215,9 +215,9 @@ print_output: Python Trade update: ETH BUY 150.04 0.06120036202519413
 print_output: Python Trade update: ETH SELL 150.04 0.35734930314359825
 print_output: Python Trade update: ETH BUY 149.81 0.015899045563754155
 print_output: Python Trade update: ETH BUY 150.05 0.5409423285546522
-print_output: Python Account update: ETH SELL 150.05 0.5409423285546522 99849.80906248504
+print_output: Python Account update: ETH SELL 150.05 0.5409423285546522
 print_output: Python Trade update: ETH BUY 150.05 0.371720656756539
-print_output: Python Account update: ETH SELL 150.05 0.371720656756539 99849.80906248504
+print_output: Python Account update: ETH SELL 150.05 0.371720656756539
 print_output: Python Trade update: ETH SELL 149.99 0.37330590132717784
 print_output: Python Trade update: ETH SELL 149.99 0.15727481156768358
 print_output: Python Trade update: ETH BUY 149.73 0.37349046449663953
@@ -229,17 +229,17 @@ print_output: Python Trade update: ETH BUY 149.68 0.16978421825562973
 print_output: Python Trade update: ETH BUY 149.68 0.24979849509037455
 print_output: Python Trade update: ETH BUY 149.85 0.1055387616230255
 print_output: Python Trade update: ETH SELL 150.0 0.5579945250074563
-print_output: Python Account update: ETH BUY 150.0 0.5579945250074563 99766.10988373392
+print_output: Python Account update: ETH BUY 150.0 0.5579945250074563
 print_output: Python Trade update: ETH SELL 150.0 0.4420054749925437
-print_output: Python Account update: ETH BUY 150.0 0.4420054749925437 99624.42965271772
+print_output: Python Account update: ETH BUY 150.0 0.4420054749925437
 print_output: Python Trade update: ETH SELL 150.0 0.0627951317781884
-print_output: Python Account update: ETH BUY 150.0 0.0627951317781884 99624.42965271772
+print_output: Python Account update: ETH BUY 150.0 0.0627951317781884
 print_output: Python Trade update: ETH SELL 150.0 0.43973426667069077
-print_output: Python Account update: ETH BUY 150.0 0.43973426667069077 99624.42965271772
+print_output: Python Account update: ETH BUY 150.0 0.43973426667069077
 print_output: Python Trade update: ETH SELL 150.0 0.5319560861082555
-print_output: Python Account update: ETH BUY 150.0 0.5319560861082555 99474.42965271772
+print_output: Python Account update: ETH BUY 150.0 0.5319560861082555
 print_output: Python Trade update: ETH SELL 150.0 0.4680439138917445
-print_output: Python Account update: ETH BUY 150.0 0.4680439138917445 99474.42965271772
+print_output: Python Account update: ETH BUY 150.0 0.4680439138917445
 print_output: Python Trade update: ETH BUY 149.83 0.06312599215674386
 print_output: Python Trade update: ETH SELL 150.36 0.43852136659045216
 print_output: Python Trade update: ETH SELL 150.52 0.3715049585554617
@@ -276,11 +276,11 @@ print_output: Python Trade update: ETH BUY 150.1 0.3526663764573997
 print_output: Python Trade update: ETH BUY 150.1 0.04626638869636579
 print_output: Python Trade update: ETH SELL 150.3 0.3924591724879817
 print_output: Python Trade update: ETH BUY 150.37 0.547434127319029
-print_output: Python Account update: ETH SELL 150.37 0.547434127319029 99624.79965271772
+print_output: Python Account update: ETH SELL 150.37 0.547434127319029
 print_output: Python Trade update: ETH BUY 150.37 0.37186985041635157
-print_output: Python Account update: ETH SELL 150.37 0.37186985041635157 99624.79965271772
+print_output: Python Account update: ETH SELL 150.37 0.37186985041635157
 print_output: Python Trade update: ETH BUY 150.37 0.08069602226461947
-print_output: Python Account update: ETH SELL 150.37 0.08069602226461947 99624.79965271772
+print_output: Python Account update: ETH SELL 150.37 0.08069602226461947
 print_output: Python Trade update: ETH SELL 150.4 0.33685249644373993
 print_output: Python Trade update: ETH SELL 150.28 0.22084921883285857
 print_output: Python Trade update: ETH SELL 150.28 0.3087331091953325
@@ -288,7 +288,7 @@ print_output: Python Trade update: ETH BUY 149.95 0.0931799812876537
 print_output: Python Trade update: ETH SELL 150.14 0.3724384606183327
 print_output: Python Trade update: ETH SELL 150.11 0.06693331815332398
 print_output: Python Trade update: ETH SELL 150.14 0.3724393541430043
-print_output: Python Account update: ETH BUY 150.14 0.3724393541430043 99568.88160808668
+print_output: Python Account update: ETH BUY 150.14 0.3724393541430043
 print_output: Python Trade update: ETH BUY 150.2 0.37230664320216733
 print_output: Python Trade update: ETH SELL 150.52 0.4381283196686785
 print_output: Python Trade update: ETH SELL 150.35 0.08424621932772103
