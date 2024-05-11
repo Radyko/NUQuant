@@ -29,17 +29,20 @@ class Strategy:
         self.sell_greater_ctr = 0
         self.sell_lesser_ctr = 0
 
-    # def execute_trade(self, delta_volume):
-    #     if delta_volume > 0:
-    #         if self.buy_price is not None:
-    #             place_market_order("BUY", "ETH", 1, self.buy_price)
-    #         else:
-    #             print("Error: Cannot execute trade. Buy price is not available.")
-    #     elif delta_volume < 0:
-    #         if self.sell_price is not None:
-    #             place_market_order("SELL", "ETH", 1, self.sell_price)
-    #         else:
-    #             print("Error: Cannot execute trade. Sell price is not available.")
+    def execute_trade(self, delta_volume, side, ticker):
+        if ticker == "ETH" and self.delta_volume is not None:
+            if side == "BUY" and delta_volume > 0.1:
+                place_market_order("BUY", "ETH", 1, self.buy_price)
+                self.buy_greater_ctr += 1
+            if side == "BUY" and delta_volume < 0:
+                place_market_order("SELL", "ETH", 1, self.sell_price)
+                self.buy_lesser_ctr += 1
+            if side == "SELL" and delta_volume < -0.1:
+                place_market_order("SELL", "ETH", 1, self.sell_price)
+                self.sell_lesser_ctr += 1
+            if side == "SELL" and delta_volume > 0:
+                place_market_order("BUY", "ETH", 1, self.buy_price)
+                self.sell_greater_ctr += 1
 
     def on_trade_update(self, ticker: str, side: str, price: float, quantity: float) -> None:
         total_eth_volume = 0
@@ -58,24 +61,14 @@ class Strategy:
 
         self.delta_volume = ((total_eth_buy_volume - total_eth_sell_volume) / total_eth_volume)
 
-        # self.execute_trade(delta_volume)
-        
-        print(self.buy_lesser_ctr)
-        print(self.buy_greater_ctr)
-        print(self.sell_lesser_ctr)
-        print(self.sell_greater_ctr)
+        self.execute_trade(self.delta_volume, side, ticker)
 
     def on_orderbook_update(self, ticker: str, side: str, price: float, quantity: float) -> None:
-        if ticker == "ETH" and self.delta_volume is not None:
-            if side == "BUY" and self.delta_volume > 0:
-                self.buy_greater_ctr += 1
-            if side == "BUY" and self.delta_volume < 0:
-                self.buy_lesser_ctr += 1
-            if side == "SELL" and self.delta_volume > 0:
-                self.sell_greater_ctr += 1
-            if side == "SELL" and self.delta_volume < 0:
-                self.sell_lesser_ctr += 1
-
+        if ticker == "ETH":
+            if side == "BUY":
+                self.buy_price = price  # Update buy price
+            elif side == "SELL":
+                self.sell_price = price  # Update sell price
 
     def update_balance(self, amount: float) -> None:
         self.current_balance += amount
