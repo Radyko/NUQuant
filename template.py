@@ -66,7 +66,7 @@ class Strategy:
         print(self.sell_greater_ctr)
 
     def on_orderbook_update(self, ticker: str, side: str, price: float, quantity: float) -> None:
-        if ticker == "ETH":
+        if ticker == "ETH" and self.delta_volume is not None:
             if side == "BUY" and self.delta_volume > 0:
                 self.buy_greater_ctr += 1
             if side == "BUY" and self.delta_volume < 0:
